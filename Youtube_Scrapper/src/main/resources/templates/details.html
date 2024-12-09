@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>YouTube Video Scrapper</title>
+</head>
+<body class="bg-gray-900 text-white">
+
+    
+    <nav class="bg-blue-800 py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="/" class="text-3xl font-bold text-white">YouTube Scraper</a>
+            <a href="/" class="bg-blue-500 hover:bg-blue-400 text-white px-6 py-2 rounded-md">Find New Details 🔍</a>
+        </div>
+    </nav>
+
+    
+    <div class="container mx-auto p-8">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-xl">
+            
+            
+            <h1 class="text-4xl font-semibold text-center mb-4" th:text="${vtitle}"></h1>
+
+            
+            <div class="flex justify-center mb-6">
+                <img th:src="${vthumb}" alt="Thumbnail" class="rounded-lg shadow-lg max-w-full h-auto" />
+            </div>
+
+            
+            <div class="bg-gray-700 p-4 rounded-md mb-6">
+                <h2 class="text-xl font-semibold mb-2">Description</h2>
+                <p class="text-gray-300 text-sm overflow-auto" th:text="${vdesc}"></p>
+            </div>
+
+            
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2">Tags</h2>
+                <ul class="flex flex-wrap gap-3">
+                    <li th:each="tag : ${vtags}" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-400 cursor-pointer" th:text="${tag}"></li>
+                </ul>
+            </div>
+
+            
+            <div class="text-center">
+                <a href="/" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition ease-in-out duration-300">Go Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

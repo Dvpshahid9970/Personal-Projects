@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>YouTube Video Scrapper</title>
+</head>
+<body class="bg-gray-900 text-white">
+
+   
+    <div class="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+        <!-- Form Section -->
+        <form th:action="@{processing}" method="post" class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full text-center space-y-6">
+
+          
+            <h1 class="text-4xl font-bold text-red-500">YouTube Video Scraper</h1>
+            
+           
+            <p class="text-lg text-gray-300">Enter the URL of a YouTube video to get its details.</p>
+
+           
+            <div>
+                <label for="videolink" class="block text-xl font-medium text-gray-200 mb-2">Enter Video URL</label>
+                <input type="text" name="videolink" id="videolink" class="w-full px-4 py-2 rounded-md text-gray-900 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" required placeholder="Paste YouTube Video URL here">
+            </div>
+
+            
+            <button type="submit" class="bg-red-600 hover:bg-red-800 text-white px-6 py-3 rounded-md text-lg transition-all duration-300 ease-in-out w-full">
+                Get Video Details
+            </button>
+
+        </form>
+    </div>
+
+   
+    <footer class="bg-gray-800 py-4 text-center text-gray-400">
+        <p>&copy; 2024 YouTube Video Scraper | Designed with ♥ using TailwindCSS</p>
+    </footer>
+
+</body>
+</html>
